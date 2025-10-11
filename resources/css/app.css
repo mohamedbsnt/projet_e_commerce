@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Transitions pour le header */
+nav a, nav button {
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/* Sections dynamiques masquées */
+.hidden-section {
+  display: none;
+}
+
+/* Style pour les breadcrumbs */
+nav a:hover {
+  color: #ea580c; /* orange-600 */
+}
+
+/* Responsive design pour le flex layout */
+@media (max-width: 1024px) {
+  .flex-col.lg\:flex-row {
+    gap: 1.5rem;
+  }
+}
