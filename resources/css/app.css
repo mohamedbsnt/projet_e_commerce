@@ -1,25 +1,80 @@
+/* Import de la fonte Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Directives Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Transitions pour le header */
-nav a, nav button {
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+/* Variables globales */
+:root {
+  --brand-orange:   #ea580c;
+  --brand-pink:     #ec4899;
+  --light-red:      #ffe3e3;
+  --text-primary:   #1f2937;
+  --text-secondary: #050506;
+  --text-muted:     #9ca3af;
 }
 
-/* Sections dynamiques masquées */
-.hidden-section {
-  display: none;
-}
-
-/* Style pour les breadcrumbs */
-nav a:hover {
-  color: #ea580c; /* orange-600 */
-}
-
-/* Responsive design pour le flex layout */
-@media (max-width: 1024px) {
-  .flex-col.lg\:flex-row {
-    gap: 1.5rem;
+/* Styles de base */
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
   }
+  nav a, nav button {
+    transition: all 0.2s ease-in-out;
+  }
+  .breadcrumb a:hover {
+    color: var(--brand-orange);
+    text-decoration: underline;
+  }
+
+  /* Sections dynamiques masquées/affichées */
+  .hidden-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease-in-out;
+  }
+  .hidden-section.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Composants personnalisés */
+@layer components {
+  /* Textes enrichis */
+  .prose {
+    @apply max-w-none;
+  }
+  .prose h1 {
+    @apply text-4xl font-bold leading-tight text-gray-900 lg:text-5xl;
+  }
+  .prose p {
+    @apply text-lg leading-relaxed text-gray-600;
+  }
+
+  /* Boutons */
+  .btn-primary {
+    @apply px-6 py-3 font-semibold text-white transition-colors duration-200 rounded-lg bg-brand-pink hover:bg-pink-600;
+  }
+  .btn-secondary {
+    @apply px-6 py-3 font-medium text-gray-700 transition-colors duration-200 border border-gray-300 rounded-lg hover:border-gray-400 hover:text-gray-900;
+  }
+
+  /* Effet carte */
+  .card-hover {
+    @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+}
+
+/* Utilitaires additionnels */
+@layer utilities {
+  /* Couleurs utilitaires */
+  .text-brand-orange { color: var(--brand-orange); }
+  .text-brand-pink   { color: var(--brand-pink); }
 }

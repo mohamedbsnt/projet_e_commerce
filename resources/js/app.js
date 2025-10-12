@@ -1,3 +1,5 @@
+import '../css/app.css'
+
 window.toggleSection = function(id) {
     document.querySelectorAll('.hidden-section').forEach(el => {
       el.style.display = 'none';
