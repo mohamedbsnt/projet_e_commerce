@@ -1,80 +1,141 @@
-/* Import de la fonte Inter */
+/* =====================================================
+   1. POLICE
+===================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Directives Tailwind */
+/* =====================================================
+   2. TAILWIND
+===================================================== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Variables globales */
+/* =====================================================
+   3. VARIABLES GLOBALES
+===================================================== */
 :root {
-  --brand-orange:   #ea580c;
-  --brand-pink:     #ec4899;
-  --light-red:      #ffe3e3;
-  --text-primary:   #1f2937;
-  --text-secondary: #050506;
-  --text-muted:     #9ca3af;
+  --brand-orange: #ea580c;
+  --brand-pink:   #ec4899;
+
+  --text-primary: #1f2937;
+  --text-muted:   #6b7280;
 }
 
-/* Styles de base */
+/* =====================================================
+   4. BASE
+===================================================== */
 @layer base {
-  body {
-    font-family: 'Inter', system-ui, sans-serif;
-    line-height: 1.6;
-    color: var(--text-primary);
-  }
-  nav a, nav button {
-    transition: all 0.2s ease-in-out;
-  }
-  .breadcrumb a:hover {
-    color: var(--brand-orange);
-    text-decoration: underline;
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 
-  /* Sections dynamiques masquées/affichées */
-  .hidden-section {
-    display: none;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease-in-out;
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #f9fafb;
+    color: var(--text-primary);
   }
-  .hidden-section.show {
-    display: block;
+
+  button svg {
+    transition: transform 0.2s ease-in-out;
+  }
+}
+
+/* =====================================================
+   5. COMPOSANTS
+===================================================== */
+@layer components {
+  /* BOUTON NAVBAR */
+  .nav-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 0.5rem;
+    font-weight: 500;
+    color: #374151; /* gray-700 */
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .nav-btn .nav-underline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: var(--brand-orange);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease-in-out;
+    }
+    .btn-tpt {
+    background-color: #00a99d; /* Couleur verte typique de TPT */
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+    }
+
+   .btn-tpt:hover {
+    background-color: #008c82;
+    }
+
+
+  .nav-btn.active {
+    
+    color: var(--brand-orange);
+    border-bottom-color: var(--brand-orange);
+  }
+
+  .nav-btn.active .nav-underline {
+    transform: scaleX(1);
+  }
+
+  .nav-btn.active svg {
+    transform: rotate(180deg);
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 font-semibold text-white transition rounded-lg bg-brand-pink hover:bg-pink-600;
+  }
+
+  /* MEGA DROPDOWN WRAPPER */
+  .dropdown-panel {
+    @apply absolute left-0 right-0 bg-white border-t border-gray-100 shadow-lg;
+    animation: fadeDown 0.2s ease-out;
+  }
+}
+
+
+
+/* =====================================================
+   6. UTILITIES
+===================================================== */
+@layer utilities {
+  .text-brand-orange {
+    color: var(--brand-orange);
+  }
+
+  .border-brand-orange {
+    border-color: var(--brand-orange);
+  }
+}
+
+/* =====================================================
+   7. ANIMATIONS
+===================================================== */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Composants personnalisés */
-@layer components {
-  /* Textes enrichis */
-  .prose {
-    @apply max-w-none;
-  }
-  .prose h1 {
-    @apply text-4xl font-bold leading-tight text-gray-900 lg:text-5xl;
-  }
-  .prose p {
-    @apply text-lg leading-relaxed text-gray-600;
-  }
-
-  /* Boutons */
-  .btn-primary {
-    @apply px-6 py-3 font-semibold text-white transition-colors duration-200 rounded-lg bg-brand-pink hover:bg-pink-600;
-  }
-  .btn-secondary {
-    @apply px-6 py-3 font-medium text-gray-700 transition-colors duration-200 border border-gray-300 rounded-lg hover:border-gray-400 hover:text-gray-900;
-  }
-
-  /* Effet carte */
-  .card-hover {
-    @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg;
-  }
-}
-
-/* Utilitaires additionnels */
-@layer utilities {
-  /* Couleurs utilitaires */
-  .text-brand-orange { color: var(--brand-orange); }
-  .text-brand-pink   { color: var(--brand-pink); }
 }

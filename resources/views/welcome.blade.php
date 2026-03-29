@@ -12,385 +12,370 @@
         <span class="mx-2">›</span>
         <a href="#" class="hover:text-brand-orange hover:underline">Conseils & Stratégies E-Commerce</a>
     </nav>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:italic,wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+    .font-serif { font-family: 'Playfair Display', serif; }
+    .font-sans { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .card-hover:hover { transform: translateY(-10px ); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
 
-    <!-- Article principal avec proportions AutoDS -->
-    <div class="flex flex-col lg:flex-row gap-8 mb-16 bg-[#ffd3d3] p-8 rounded-lg">
-        <!-- Contenu texte - Réduit à 40% -->
-        <div class="lg:w-2/5">
-            <h1 class="mb-6 text-4xl font-bold leading-tight text-gray-900 lg:text-5xl">
+    <!-- Article principal / Hero Section -->
+    <div class="flex flex-col lg:flex-row gap-8 mb-16 bg-[#ffd3d3] p-8 rounded-3xl shadow-sm">
+        <!-- Contenu texte -->
+        <div class="flex flex-col justify-center lg:w-2/5">
+            <h1 class="mb-6 text-4xl font-extrabold leading-tight text-gray-900 lg:text-5xl">
                 6 Exemples Business E-Commerce Et Comment Commencer
             </h1>
             
-            <p class="mb-6 text-lg leading-relaxed text-gray-600">
+            <p class="mb-6 text-lg leading-relaxed text-gray-700">
                 Vous voulez vous lancer dans l'e-commerce ? Découvrez six exemples de business e-commerce et trouvez les meilleures plateformes pour démarrer votre activité ici.
             </p>
             
-            <p class="mb-6 text-sm text-gray-500">13 minutes de lecture</p>
+            <div class="flex items-center mb-8 space-x-4">
+                <span class="px-3 py-1 text-xs font-bold tracking-wider text-white uppercase rounded-full bg-brand-orange">Nouveau</span>
+                <p class="text-sm font-medium text-gray-500">13 minutes de lecture</p>
+            </div>
             
-            <a href="#" class="inline-flex items-center mb-8 text-sm text-brand-orange hover:text-orange-700 hover:underline">
+            <button onclick="copyToClipboard()" class="inline-flex items-center self-start px-4 py-2 text-sm font-semibold transition-colors bg-white border border-orange-100 rounded-lg shadow-sm text-brand-orange hover:bg-orange-50">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
                 </svg>
-                Copier le lien de cette page
-            </a>
+                Partager cet article
+            </button>
         </div>
 
-        <!-- Image principale - Agrandie à 60% -->
+        <!-- Image principale -->
         <div class="lg:w-3/5">
             <img 
-                src="{{ asset('images/ecommerce-hero.jpg') }}" 
-                alt="6S Exemples Business E-Commerce" 
-                class="w-full h-96 lg:h-[500px] object-cover rounded-lg shadow-lg"
+                src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?q=80&w=2070" 
+                alt="6 Exemples Business E-Commerce" 
+                class="w-full h-96 lg:h-[500px] object-cover rounded-2xl shadow-xl border-4 border-white"
                 loading="lazy"
             >
         </div>
     </div>
 
-    <!-- Sections dynamiques -->
-    <!-- Onglets de navigation -->
-    <!-- Section Pourquoi nous -->
-    <section id="why-section" class="p-8 mb-8 bg-white shadow-lg hidden-section rounded-xl">
-        <div class="prose max-w-none">
-            <h2 class="mb-6 text-3xl font-bold text-gray-900">Pourquoi choisir notre plateforme ?</h2>
+    {{-- SECTION DES PRODUITS --}}
+    <section class="px-4 py-24 bg-white sm:px-6 lg:px-8">
+        <div class="container mx-auto">
             
-            <div class="grid gap-8 mb-8 md:grid-cols-2">
-                <div class="space-y-4">
-                    <div class="flex items-start space-x-4">
-                        <div class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-green-100 rounded-full">
-                            <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-900">Recherche de produits</h3>
-                            <p class="text-gray-600">Découvrez des produits gagnants grâce à nos outils de recherche avancés</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start space-x-4">
-                        <div class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full">
-                            <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-900">Automatisation IA</h3>
-                            <p class="text-gray-600">Automatisez vos processus avec notre IA intégrée</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="space-y-4">
-                    <div class="flex items-start space-x-4">
-                        <div class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-purple-100 rounded-full">
-                            <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-900">Gestion de l'inventaire</h3>
-                            <p class="text-gray-600">Surveillez et optimisez votre stock en temps réel</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start space-x-4">
-                        <div class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full">
-                            <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-900">Optimisation des prix</h3>
-                            <p class="text-gray-600">Maximisez vos profits avec notre système de tarification dynamique</p>
-                        </div>
-                    </div>
-                </div>
+            {{-- Titre de la section --}}
+            <div class="mb-16 text-center">
+                <h2 class="text-5xl font-bold text-[#3A3A3A]">Our Products</h2>
+                <div class="w-24 h-1 mx-auto mt-4 rounded-full bg-brand-primary"></div>
             </div>
+    
+            {{-- Grille de produits --}}
+            @if(isset($showcaseProducts) && $showcaseProducts->isNotEmpty())
+                <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+                    @foreach($showcaseProducts as $product)
+                    
+                        @include('components.product_card_showcase', ['product' => $product])
+                    @endforeach
+                </div>
+            @else
+                <div class="py-20 text-center bg-gray-50 rounded-3xl">
+                    <p class="text-xl text-gray-500">Aucun produit à afficher pour le moment.</p>
+                    
+                </div>
+            @endif
+    
+            {{-- Bouton "Show More" --}}
+            <div class="mt-20 text-center">
+                <a href="{{ route('products.index') }}" class="inline-block px-16 py-4 font-bold transition-all transform border-2 shadow-lg text-brand-primary border-brand-primary hover:bg-brand-primary hover:text-white hover:-translate-y-1 hover:shadow-brand-primary/20">
+                    Show More
+                </a>
+            </div>
+    
         </div>
     </section>
 
-    <!-- Section Intégrations -->
-    <section id="integrations-section" class="p-8 mb-8 bg-white shadow-lg hidden-section rounded-xl">
-        <h2 class="mb-8 text-3xl font-bold text-center text-gray-900">Intégrations compatibles</h2>
-        
-        <div class="grid grid-cols-2 gap-8 mb-8 md:grid-cols-4">
-            <div class="p-4 text-center card-hover">
-                <img src="{{ asset('images/logos/shopify.png') }}" alt="Shopify" class="h-12 mx-auto mb-3">
-                <p class="font-medium text-gray-900">Shopify</p>
+
+        {{-- ===================================================================== --}}
+    {{-- NOUVELLE SECTION PRODUITS - AJOUTÉE COMME DEMANDÉ --}}
+    {{-- ===================================================================== --}}
+    <section class="py-24 bg-white">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-between mb-12">
+                <h2 class="text-4xl font-bold text-gray-800">You might also like</h2>
+                <div class="flex items-center gap-4">
+                    <button class="p-3 text-gray-600 transition-colors bg-gray-100 rounded-full prev-btn hover:bg-brand-primary hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button class="p-3 text-gray-600 transition-colors bg-gray-100 rounded-full next-btn hover:bg-brand-primary hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
             </div>
-            <div class="p-4 text-center card-hover">
-                <img src="{{ asset('images/logos/facebook.jpg') }}" alt="Facebook" class="h-12 mx-auto mb-3">
-                <p class="font-medium text-gray-900">Facebook</p>
-            </div>
-            <div class="p-4 text-center card-hover">
-                <img src="{{ asset('images/logos/etsy.png') }}" alt="Etsy" class="h-12 mx-auto mb-3">
-                <p class="font-medium text-gray-900">Etsy</p>
-            </div>
-            <div class="p-4 text-center card-hover">
-                <img src="{{ asset('images/logos/woocommerce.png') }}" alt="WooCommerce" class="h-12 mx-auto mb-3">
-                <p class="font-medium text-gray-900">WooCommerce</p>
-            </div>
-            <div class="p-4 text-center card-hover">
-                <img src="{{ asset('images/logos/ebay.png') }}" alt="eBay" class="h-12 mx-auto mb-3">
-                <p class="font-medium text-gray-900">eBay</p>
-            </div>
-            <div class="p-4 text-center card-hover">
-                <img src="{{ asset('images/logos/amazon.png') }}" alt="Amazon" class="h-12 mx-auto mb-3">
-                <p class="font-medium text-gray-900">Amazon</p>
-            </div>
-            <div class="p-4 text-center card-hover">
-                <img src="{{ asset('images/logos/wix.png') }}" alt="Wix" class="h-12 mx-auto mb-3">
-                <p class="font-medium text-gray-900">Wix</p>
-            </div>
-            <div class="p-4 text-center card-hover">
-                <img src="{{ asset('images/logos/tiktok.png') }}" alt="TikTok Shop" class="h-12 mx-auto mb-3">
-                <p class="font-medium text-gray-900">TikTok Shop</p>
-            </div>
+
+            @isset($showcaseProducts )
+                @if($showcaseProducts->isNotEmpty())
+                    <!-- Swiper Carrousel -->
+                    <div class="swiper product-swiper">
+                        <div class="swiper-wrapper">
+                            @foreach($showcaseProducts as $product)
+                                <div class="swiper-slide">
+                                    {{-- On inclut le composant de carte produit que vous avez déjà --}}
+                                    @include('components.product_card_showcase', ['product' => $product])
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                @else
+                    <div class="py-20 text-center bg-gray-50 rounded-3xl">
+                        <p class="text-xl text-gray-500">Aucun produit à afficher pour le moment.</p>
+                    </div>
+                @endif
+            @else
+                <div class="py-20 text-center border border-yellow-200 bg-yellow-50 rounded-3xl">
+                    <p class="text-xl text-yellow-700">Note pour le développeur : La variable '$showcaseProducts' n'est pas définie.</p>
+                </div>
+            @endisset
         </div>
     </section>
-
-    <!-- Section Fournisseurs -->
-    <section id="suppliers-section" class="p-8 mb-8 bg-white shadow-lg hidden-section rounded-xl">
-        <h2 class="mb-8 text-3xl font-bold text-gray-900">Nos fournisseurs de confiance</h2>
-        
-        <div class="grid gap-8 mb-8 md:grid-cols-2">
-            <!-- Fournisseurs à gauche -->
-            <div>
-                <div class="grid grid-cols-2 gap-6 mb-6">
-                    <div class="flex items-center p-4 space-x-3 transition-shadow border rounded-lg hover:shadow-md">
-                        <img src="{{ asset('images/suppliers/aliexpress.png') }}" alt="AliExpress" class="w-8 h-8">
-                        <span class="font-medium">AliExpress</span>
+    <section class="py-24 bg-[#FDFDFD] font-sans">
+        <div class="px-6 mx-auto max-w-7xl">
+            <!-- Header de la section -->
+            <div class="flex flex-col items-end justify-between mb-16 md:flex-row" data-aos="fade-up">
+                <div class="max-w-2xl">
+                    <div class="flex items-center mb-4 space-x-3">
+                        <span class="px-3 py-1 bg-brand-primary/10 text-brand-primary text-[10px] font-bold uppercase tracking-widest rounded-full">Nouveau</span>
+                        <span class="text-xs text-gray-400">13 minutes de lecture</span>
                     </div>
-                    <div class="flex items-center p-4 space-x-3 transition-shadow border rounded-lg hover:shadow-md">
-                        <img src="{{ asset('images/suppliers/banggood.png') }}" alt="Banggood" class="w-8 h-8">
-                        <span class="font-medium">Banggood</span>
-                    </div>
-                    <div class="flex items-center p-4 space-x-3 transition-shadow border rounded-lg hover:shadow-md">
-                        <img src="{{ asset('images/suppliers/costway.png') }}" alt="Costway" class="w-8 h-8">
-                        <span class="font-medium">Costway</span>
-                    </div>
-                    <div class="flex items-center p-4 space-x-3 transition-shadow border rounded-lg hover:shadow-md">
-                        <img src="{{ asset('images/suppliers/walmart.png') }}" alt="Walmart" class="w-8 h-8">
-                        <span class="font-medium">Walmart</span>
-                    </div>
-                </div>
-                
-                <div class="p-6 rounded-lg bg-gray-50">
-                    <h3 class="mb-2 font-semibold text-gray-900">Nos fournisseurs supportés</h3>
-                    <p class="text-sm text-gray-600">
-                        Parcourez les produits tendance de nos fournisseurs de confiance et partenaires mondiaux.
+                    <h2 class="mb-6 font-serif text-5xl leading-tight md:text-6xl">
+                        6 Exemples Business E-Commerce   
+    
+                        <span class="italic text-gray-400">& Comment Commencer</span>
+                    </h2>
+                    <p class="text-lg leading-relaxed text-gray-500">
+                        Vous voulez vous lancer dans l'e-commerce ? Découvrez nos études de cas et trouvez les meilleures plateformes pour démarrer votre activité ici.
                     </p>
                 </div>
+                <button class="flex items-center pb-1 mt-8 space-x-2 text-sm font-bold transition-all border-b-2 border-black md:mt-0 hover:text-brand-primary hover:border-brand-primary">
+                    <span>PARTAGER L'ARTICLE</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                </button>
             </div>
-            
-            <!-- Info à droite -->
-            <div class="space-y-6">
-                <div class="p-6 rounded-lg bg-blue-50">
-                    <div class="flex items-center mb-3 space-x-3">
-                        <div class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full">
-                            <span class="font-bold text-blue-600">€</span>
-                        </div>
-                        <div>
-                            <div class="text-sm text-gray-600">PAYÉ</div>
-                            <div class="text-lg font-bold">€ 1,899</div>
-                        </div>
+    
+            <!-- Grille de services/exemples -->
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                <!-- Card 1: B2C Business -->
+                <div class="group card-hover bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+                    <div class="flex items-center justify-center w-16 h-16 mb-8 transition-colors duration-500 bg-brand-primary/5 rounded-2xl group-hover:bg-brand-primary group-hover:text-white">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                     </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full">
-                            <span class="font-bold text-gray-600">€</span>
-                        </div>
-                        <div>
-                            <div class="text-sm text-gray-600">SUIVANT</div>
-                            <div class="text-lg font-bold">€ 4,679</div>
-                        </div>
-                    </div>
+                    <h3 class="mb-4 font-serif text-2xl">Modèle B2C Direct</h3>
+                    <p class="mb-8 text-sm leading-relaxed text-gray-500">Vendez directement vos produits éducatifs aux parents et enseignants avec une marge optimisée.</p>
+                    <a href="#" class="flex items-center text-xs font-bold tracking-widest uppercase group-hover:text-brand-primary">
+                        Découvrir <svg class="w-4 h-4 ml-2 transition-transform transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
                 </div>
-                
-                <div class="p-6 rounded-lg bg-green-50">
-                    <h3 class="mb-2 font-semibold text-gray-900">Devenir fournisseur</h3>
-                    <p class="mb-4 text-sm text-gray-600">
-                        Rejoignez-nous en tant que fournisseur et vendez à plus de 100,000 vendeurs.
-                    </p>
-                    <a href="#" class="text-sm font-medium text-green-600 hover:underline">
-                        En savoir plus →
+    
+                <!-- Card 2: Dropshipping -->
+                <div class="group card-hover bg-black p-10 rounded-[2.5rem] text-white shadow-xl transition-all duration-500">
+                    <div class="flex items-center justify-center w-16 h-16 mb-8 transition-colors duration-500 bg-white/10 rounded-2xl group-hover:bg-brand-primary">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    </div>
+                    <h3 class="mb-4 font-serif text-2xl">Dropshipping Global</h3>
+                    <p class="mb-8 text-sm leading-relaxed text-gray-400">Intégrez AliExpress ou Walmart sans stock physique et automatisez vos commandes.</p>
+                    <a href="#" class="flex items-center text-xs font-bold tracking-widest uppercase text-brand-primary">
+                        En savoir plus <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+    
+                <!-- Card 3: Abonnement -->
+                <div class="group card-hover bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+                    <div class="flex items-center justify-center w-16 h-16 mb-8 transition-colors duration-500 bg-brand-primary/5 rounded-2xl group-hover:bg-brand-primary group-hover:text-white">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="mb-4 font-serif text-2xl">Modèle par Abonnement</h3>
+                    <p class="mb-8 text-sm leading-relaxed text-gray-500">Créez des revenus récurrents en proposant des ressources mensuelles exclusives.</p>
+                    <a href="#" class="flex items-center text-xs font-bold tracking-widest uppercase group-hover:text-brand-primary">
+                        Explorer <svg class="w-4 h-4 ml-2 transition-transform transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                     </a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Section Ressources -->
-    <section id="resources-section" class="p-8 mb-8 bg-white shadow-lg hidden-section rounded-xl">
-        <h2 class="mb-8 text-3xl font-bold text-gray-900">Ressources et Documentation</h2>
-        
-        <div class="grid gap-8 md:grid-cols-3">
-            <div class="p-6 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100">
-                <div class="flex items-center justify-center w-12 h-12 mb-4 bg-blue-600 rounded-lg">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                </div>
-                <h3 class="mb-2 font-semibold text-gray-900">Documentation</h3>
-                <p class="mb-4 text-sm text-gray-600">Guides complets et références API</p>
-                <a href="#" class="text-sm font-medium text-blue-600 hover:underline">Consulter →</a>
-            </div>
-            
-            <div class="p-6 rounded-lg bg-gradient-to-br from-green-50 to-green-100">
-                <div class="flex items-center justify-center w-12 h-12 mb-4 bg-green-600 rounded-lg">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
-                    </svg>
-                </div>
-                <h3 class="mb-2 font-semibold text-gray-900">Centre d'aide</h3>
-                <p class="mb-4 text-sm text-gray-600">Support technique et FAQ</p>
-                <a href="#" class="text-sm font-medium text-green-600 hover:underline">Accéder →</a>
-            </div>
-            
-            <div class="p-6 rounded-lg bg-gradient-to-br from-purple-50 to-purple-100">
-                <div class="flex items-center justify-center w-12 h-12 mb-4 bg-purple-600 rounded-lg">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
-                    </svg>
-                </div>
-                <h3 class="mb-2 font-semibold text-gray-900">Blog</h3>
-                <p class="mb-4 text-sm text-gray-600">Actualités et conseils e-commerce</p>
-                <a href="#" class="text-sm font-medium text-purple-600 hover:underline">Lire →</a>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Section Tarifs -->
-    <section id="pricing-section" class="p-8 mb-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl">
+    <section id="pricing-section" class="px-8 py-20 mb-8 shadow-inner bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl">
         <div class="mb-12 text-center">
-            <h2 class="mb-4 text-3xl font-bold text-gray-900">Choisissez votre plan</h2>
+            <h2 class="mb-4 text-3xl font-extrabold text-gray-900 lg:text-4xl">Choisissez votre plan</h2>
+            <div class="w-24 h-1.5 mb-6 mx-auto rounded-full bg-brand-orange"></div>
             <p class="max-w-2xl mx-auto text-lg text-gray-600">
                 Démarrez gratuitement et montez en gamme selon vos besoins. Tous les plans incluent notre support premium.
             </p>
         </div>
         
-        <div class="grid max-w-5xl gap-8 mx-auto md:grid-cols-3">
+        <div class="grid max-w-6xl gap-8 mx-auto md:grid-cols-3">
             <!-- Plan Starter -->
-            <div class="p-8 bg-white border shadow-lg rounded-xl">
+            <div class="p-8 transition-shadow bg-white border border-gray-100 shadow-sm rounded-2xl hover:shadow-md">
                 <div class="mb-6 text-center">
-                    <h3 class="mb-2 text-xl font-semibold text-gray-900">Starter</h3>
-                    <div class="text-3xl font-bold text-gray-900">Gratuit</div>
-                    <p class="mt-2 text-gray-600">Pour débuter</p>
+                    <h3 class="mb-2 text-xl font-bold text-gray-900">Starter</h3>
+                    <div class="text-4xl font-black text-gray-900">Gratuit</div>
+                    <p class="mt-2 font-medium text-gray-500">Pour débuter</p>
                 </div>
-                <ul class="mb-8 space-y-3">
-                    <li class="flex items-center">
+                <ul class="mb-8 space-y-4">
+                    <li class="flex items-center text-gray-600">
                         <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                         Jusqu'à 25 produits
                     </li>
-                    <li class="flex items-center">
+                    <li class="flex items-center text-gray-600">
                         <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                         1 intégration
                     </li>
-                    <li class="flex items-center">
+                    <li class="flex items-center text-gray-600">
                         <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                         Support email
                     </li>
                 </ul>
-                <button class="w-full btn-secondary">
+                <button class="w-full px-6 py-3 font-bold text-gray-700 transition-colors bg-gray-100 rounded-xl hover:bg-gray-200">
                     Commencer gratuitement
                 </button>
             </div>
 
             <!-- Plan Pro -->
-            <div class="relative p-8 bg-white border-2 shadow-xl rounded-xl border-brand-pink">
-                <div class="absolute transform -translate-x-1/2 -top-4 left-1/2">
-                    <span class="px-4 py-1 text-sm font-medium text-white rounded-full bg-brand-pink">
+            <div class="relative z-10 p-8 transform bg-white border-2 shadow-xl border-brand-orange rounded-2xl lg:scale-105">
+                <div class="absolute transform -translate-x-1/2 -top-5 left-1/2">
+                    <span class="px-6 py-1.5 text-xs font-black uppercase tracking-widest text-white rounded-full bg-brand-orange shadow-lg">
                         Plus populaire
                     </span>
                 </div>
                 <div class="mb-6 text-center">
-                    <h3 class="mb-2 text-xl font-semibold text-gray-900">Pro</h3>
-                    <div class="text-3xl font-bold text-gray-900">29€<span class="text-lg font-normal text-gray-600">/mois</span></div>
-                    <p class="mt-2 text-gray-600">Pour les entrepreneurs</p>
+                    <h3 class="mb-2 text-xl font-bold text-gray-900">Pro</h3>
+                    <div class="text-4xl font-black text-gray-900">29€<span class="text-lg font-normal text-gray-500">/mois</span></div>
+                    <p class="mt-2 font-medium text-gray-500">Pour les entrepreneurs</p>
                 </div>
-                <ul class="mb-8 space-y-3">
-                    <li class="flex items-center">
+                <ul class="mb-8 space-y-4">
+                    <li class="flex items-center font-medium text-gray-700">
                         <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                         Jusqu'à 2,500 produits
                     </li>
-                    <li class="flex items-center">
+                    <li class="flex items-center font-medium text-gray-700">
                         <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                         Intégrations illimitées
                     </li>
-                    <li class="flex items-center">
+                    <li class="flex items-center font-medium text-gray-700">
                         <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                         Support prioritaire
                     </li>
-                    <li class="flex items-center">
+                    <li class="flex items-center font-medium text-gray-700">
                         <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                         Automatisation avancée
                     </li>
                 </ul>
-                <button class="w-full btn-primary">
+                <button class="w-full px-6 py-3 font-bold text-white transition-all shadow-lg bg-brand-orange rounded-xl hover:bg-orange-600 shadow-orange-200">
                     Essayer Pro
                 </button>
             </div>
 
             <!-- Plan Enterprise -->
-            <div class="p-8 bg-white border shadow-lg rounded-xl">
+            <div class="p-8 transition-shadow bg-white border border-gray-100 shadow-sm rounded-2xl hover:shadow-md">
                 <div class="mb-6 text-center">
-                    <h3 class="mb-2 text-xl font-semibold text-gray-900">Enterprise</h3>
-                    <div class="text-3xl font-bold text-gray-900">Sur mesure</div>
-                    <p class="mt-2 text-gray-600">Pour les grandes entreprises</p>
+                    <h3 class="mb-2 text-xl font-bold text-gray-900">Enterprise</h3>
+                    <div class="text-4xl font-black text-gray-900">Sur mesure</div>
+                    <p class="mt-2 font-medium text-gray-500">Pour les grandes entreprises</p>
                 </div>
-                <ul class="mb-8 space-y-3">
-                    <li class="flex items-center">
+                <ul class="mb-8 space-y-4">
+                    <li class="flex items-center text-gray-600">
                         <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                         Produits illimités
                     </li>
-                    <li class="flex items-center">
+                    <li class="flex items-center text-gray-600">
                         <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                         API dédiée
                     </li>
-                    <li class="flex items-center">
+                    <li class="flex items-center text-gray-600">
                         <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                         Support 24/7
                     </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        Manager dédié
-                    </li>
                 </ul>
-                <button class="w-full btn-secondary">
+                <button class="w-full px-6 py-3 font-bold text-gray-700 transition-colors bg-gray-100 rounded-xl hover:bg-gray-200">
                     Nous contacter
                 </button>
             </div>
         </div>
     </section>
 
+    <section class="py-24 bg-white border-t border-gray-50">
+        <div class="px-6 mx-auto max-w-7xl">
+            <div class="grid items-center grid-cols-1 gap-20 md:grid-cols-2">
+                <!-- Image Style Dribbble (Asymétrique) -->
+                <div class="relative" data-aos="fade-right">
+                    <div class="aspect-[4/5] bg-gray-100 rounded-[3rem] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070" class="object-cover w-full h-full transition-all duration-1000 grayscale hover:grayscale-0" alt="Service">
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 bg-brand-primary p-12 rounded-[2rem] text-white hidden md:block">
+                        <p class="font-serif text-4xl italic">100%</p>
+                        <p class="text-xs tracking-widest uppercase opacity-80">Support Client</p>
+                    </div>
+                </div>
+    
+                <!-- Texte -->
+                <div data-aos="fade-left">
+                    <span class="text-brand-primary font-bold text-xs tracking-[0.3em] uppercase mb-6 block">Services de Qualité</span>
+                    <h2 class="mb-8 font-serif text-5xl leading-tight">Nous donnons vie à votre vision éducative.</h2>
+                    
+                    <div class="space-y-10">
+                        <div class="flex space-x-6">
+                            <div class="flex-shrink-0 font-serif text-2xl italic text-gray-300">01</div>
+                            <div>
+                                <h4 class="mb-2 text-xl font-bold">Sourcing Éthique</h4>
+                                <p class="text-sm leading-relaxed text-gray-500">Nous travaillons main dans la main avec AliExpress et Walmart pour vous garantir les meilleurs prix sans compromis.</p>
+                            </div>
+                        </div>
+                        <div class="flex space-x-6">
+                            <div class="flex-shrink-0 font-serif text-2xl italic text-gray-300">02</div>
+                            <div>
+                                <h4 class="mb-2 text-xl font-bold">Design sur Mesure</h4>
+                                <p class="text-sm leading-relaxed text-gray-500">Chaque ressource est testée et validée par notre équipe créative pour un rendu professionnel.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <button class="px-10 py-5 mt-12 text-sm font-bold text-white transition-all duration-500 transform bg-black rounded-full hover:bg-brand-primary hover:scale-105">
+                        DÉCOUVRIR TOUS NOS SERVICES
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
 </div>
 @endsection
 
 @push('scripts')
 <script>
+function copyToClipboard() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('Lien copié dans le presse-papier !');
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Animation d'apparition des sections
+    // Animation d'apparition des éléments
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -400,16 +385,16 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('opacity-100', 'translate-y-0');
-                entry.target.classList.remove('opacity-0', 'translate-y-4');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
             }
         });
     }, observerOptions);
     
-    document.querySelectorAll('.card-hover').forEach(el => {
+    // On observe les cartes et les sections
+    document.querySelectorAll('.product-card, section').forEach(el => {
+        el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700', 'ease-out');
         observer.observe(el);
-        el.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-700');
     });
 });
 </script>
-
 @endpush

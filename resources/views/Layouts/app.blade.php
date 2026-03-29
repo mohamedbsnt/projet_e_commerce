@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -14,13 +16,18 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {{-- DÉTAIL 2 : Chargement des styles de Livewire. --}}
+    {{-- Doit être dans le <head> pour éviter les "sauts" d'affichage (FOUC ). --}}
+    @livewireStyles
     
     <!-- Styles compilés -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css' ) }}" rel="stylesheet">
     
     <!-- Styles additionnels des vues enfants -->
     @stack('styles')
+    
 </head>
+
 <body class="antialiased text-gray-900 bg-gray-50">
     
     <!-- Navigation principale avec dropdowns -->
@@ -34,31 +41,27 @@
     <!-- Pied de page -->
     @include('partials.footer')
     
+    @livewireScripts
     <!-- Scripts JavaScript compilés -->
     <script src="{{ mix('js/app.js') }}"></script>
     
     <!-- Script global pour gérer les onglets et dropdowns -->
     <script>
         // Fonction principale pour basculer les sections et dropdowns
-        function toggleSection(id) {
-            // 1. Gestion des sections de contenu dans <main>
-            document.querySelectorAll('.hidden-section').forEach(section => {
-                section.classList.toggle('show', section.id === id);
-            });
+        function toggleDropdown(id) {
+            const targetPanel = document.getElementById(id);
             
-            // 2. Gestion des dropdown-panels sous le header
+            // Fermer tous les autres dropdowns
             document.querySelectorAll('.dropdown-panel').forEach(panel => {
-                const targetKey = id.replace('-section', '');
-                const shouldShow = panel.id.startsWith(targetKey + '-dropdown');
-                panel.classList.toggle('hidden', !shouldShow);
+                if (panel.id !== id) {
+                    panel.classList.add('hidden');
+                }
             });
             
-            // 3. Mise à jour de l'onglet actif (couleur rose)
-            document.querySelectorAll('.tab-btn').forEach(button => {
-                const isActive = button.getAttribute('data-target') === id;
-                button.classList.toggle('text-brand-pink', isActive);
-                button.classList.toggle('text-gray-700', !isActive);
-            });
+            // Basculer l'affichage du dropdown cible
+            if (targetPanel) {
+                targetPanel.classList.toggle('hidden');
+            }
         }
         
         // Fonction pour gérer le menu mobile
@@ -71,8 +74,7 @@
         
         // Initialisation au chargement de la page
         document.addEventListener('DOMContentLoaded', function() {
-            // Activer la première section par défaut
-            toggleSection('why-section');
+            // Aucune section n'est activée par défaut, les dropdowns sont cachés.
             
             // Gestion du bouton menu mobile
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -82,7 +84,7 @@
             
             // Fermer les dropdowns quand on clique ailleurs
             document.addEventListener('click', function(event) {
-                const isTabButton = event.target.closest('.tab-btn');
+                const isTabButton = event.target.closest('button[onclick^="toggleDropdown"]');
                 const isDropdown = event.target.closest('.dropdown-panel');
                 
                 if (!isTabButton && !isDropdown) {
@@ -116,7 +118,10 @@
     </script>
     
     <!-- Scripts additionnels des vues enfants -->
+    <x-chatbot />
+
+    {{-- Scripts additionnels des vues enfants (déjà correct) --}}
     @stack('scripts')
-    
+
 </body>
 </html>
